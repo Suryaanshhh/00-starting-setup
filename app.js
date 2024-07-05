@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const errorController = require('./controllers/error');
 
 const Mongo=require('./util/database').MongoConnect;
+const user=require('./models/user');
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.use((req, res, next) => {
   //     next();
   //   })
   //   .catch(err => console.log(err));
-  next()
+  // next()
 });
 
 app.use('/admin', adminRoutes);
